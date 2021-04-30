@@ -7,12 +7,14 @@ class GlobalDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Media Query to dynamically get the size of screen
     final size = MediaQuery.of(context).size;
 
     buildCard(String heading, int number, Color selectedcolor) {
       return Container(
         height: size.height * 0.15,
         width: size.width * 0.45,
+        // Card for elevation, good UI
         child: Card(
           elevation: 4,
           child: Column(

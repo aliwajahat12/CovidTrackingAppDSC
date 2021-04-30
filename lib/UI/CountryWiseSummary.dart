@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
+
 import 'package:covidapp/models/covid.dart';
 import 'package:covidapp/models/httpRequests.dart';
-import 'package:flutter/material.dart';
 
 class CountryWiseSummary extends StatelessWidget {
   final countrySummary = HttpReq.getSummaryByCountries();
+  // final countrySummary = HttpReq.summaryByCountry;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +16,7 @@ class CountryWiseSummary extends StatelessWidget {
               countryItem.newDeaths == 0 &&
               countryItem.newRecovered == 0
           ? Container()
+          // Padding is space betwen border and elements
           : Padding(
               padding: const EdgeInsets.symmetric(vertical: 4.0),
               child: Row(
@@ -86,6 +89,7 @@ class CountryWiseSummary extends StatelessWidget {
         headingRow(),
         SizedBox(height: 5),
         Expanded(
+          // use listview.builder when lngth is not fixed
           child: ListView.builder(
             itemBuilder: (ctx, i) => displayItem(countrySummary[i]),
             itemCount: countrySummary.length,
