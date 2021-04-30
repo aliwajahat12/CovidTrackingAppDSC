@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:covidapp/models/covid.dart';
 import 'package:covidapp/UI/CountryWiseSummary.dart';
 import 'package:covidapp/UI/GlobalDisplay.dart';
-import 'package:flutter/material.dart';
 
 import 'models/httpRequests.dart';
 
